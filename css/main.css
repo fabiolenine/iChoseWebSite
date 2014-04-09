@@ -1,0 +1,398 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html,
+body {
+    line-height: 1.4;
+    font-size: 1em;
+}
+
+html,
+body {
+    width: auto !important;
+    min-width: 100% !important;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+* {
+    font-family: 'Raleway', sans-serif;
+    list-style: none;
+}
+
+input,
+textarea {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size: 20px;
+}
+
+p:first-of-type {
+    margin-top: 10px;
+}
+
+header,
+section,
+footer {
+    width: auto;
+    min-width: 960px;
+}
+
+nav {
+    width: auto;
+    min-width: 100%;
+}
+
+
+header {
+    background-image: url(../img/bg_top.jpg);
+    width: auto;
+    min-width: 960px;
+    height: 480px;
+}
+
+header div {
+    padding-top: 110px;
+    height: 480px;
+    background-image: url(../img/handson.png);
+    background-repeat: no-repeat;
+    background-position: right 90px;
+}
+
+header div img {
+    margin-left: 10%;
+}
+
+header div img:last-of-type {
+    margin-left: 18%;
+}
+
+header div p {
+    width: 480px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+nav {
+    position: fixed;
+    z-index: 99999999;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+}
+
+nav,
+nav ul,
+header div,
+.intro p,
+.faq-content,
+.contact,
+.footer-area {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+nav ul {
+    text-align: right;
+}
+
+nav a {
+    color: white;
+}
+
+nav ul li:first-of-type {
+    float: left;
+    margin-top: 8px;
+}
+
+nav ul li:not(:first-of-type) {
+    display: inline-block;
+    color: #cccccc;
+    margin-top: 18px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-right: solid #555555 1px;
+}
+
+nav ul li:last-of-type {
+    border-right: 0;
+    padding-right: 0;
+}
+
+
+.intro {
+    text-align: center;
+    height: 280px;
+    background-color: black;
+    background-image: url(../img/bg_middle.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #f2f2f2;
+    padding: 70px 0 0 0;
+}
+
+.brands {
+    height: 380px;
+    background-color: #222222;
+}
+
+.brands ul {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.brands div .brands-itens ul {
+    padding-top: 60px;
+    display: table;
+    height: 280px;
+    width: 840px;
+}
+
+.brands div .brands-itens ul li {
+    display: table-cell;
+    width: 280px;
+}
+
+.brands div .brands-itens ul li div {
+    width: 220px;
+    height: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background-color: #333333;
+}
+
+.faq {
+    background-color: #282042;
+    color: #ffffff;
+    text-align: center;
+}
+
+.faq-content {
+    width: 950px;
+    display: inline-block;
+    list-style: none;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.faq-top {
+    display: inline-block;
+}
+
+.faq-count,
+.faq-title {
+    float: left;
+    height: 30px;
+    background-color: #3d3554;
+    border: solid 1px #282042;
+}
+
+.faq-count div {
+    width: 30px;
+    height: 30px;
+    color: #19122c;
+    text-align: center;
+    font-size: 20px;
+}
+
+.faq-title div {
+    width: 910px;
+    height: 30px;
+    color: #cccccc;
+    padding-left: 6px;
+    text-align: left;
+    font-size: 20px;
+}
+
+section:last-of-type {
+    background-color: #c0c0c0;
+}
+
+.contact {
+    width: 950px;
+    height: 200px;
+    list-style: none;
+    display: table;
+}
+
+.form-area {
+    width: 410px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.form-area textarea {
+    width: 194px;
+    height: 92px;
+    background-color: #444444;
+    border: 0;
+    float: left;
+    margin-right: 2px;
+    outline: 0;
+    padding-top: 10px;
+    padding-left: 6px;
+    color: #cccccc;
+}
+
+.form-area input {
+    width: 194px;
+    height: 30px;
+    margin-bottom: 2px;
+    background-color: #444444;
+    border: 0;
+    float: left;
+    outline: 0;
+    padding-left: 6px;
+    color: #cccccc;
+}
+
+.form-area input[type="submit"] {
+    width: 188px;
+    color: #cccccc;
+    height: 29px;
+    background-color: #555555;
+    border-bottom: solid 5px #888888;
+}
+
+.form-area input[type="submit"]:active {
+    margin-top: 3px;
+    height: 29px;
+    background-color: #555555;
+    border-bottom: solid 2px #888888;
+}
+
+
+.logo-area {
+    text-align: right;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.appstore-area {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+
+
+footer {
+    height: 60px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer a {
+    color: white;
+}
+
+
+.footer-area {
+    display: table;
+    height: 60px;
+    color: white;
+}
+
+.footer-area li {
+    display: table-cell;
+    vertical-align: middle;
+}
+.footer-area li:nth-child(1) {
+    width: 160px;
+}
+
+.footer-area li:nth-child(2) {
+    text-align: center;
+}
+
+.footer-area li:nth-child(2) span {
+    padding-left: 10px;
+}
+
+.footer-area li:nth-child(3) {
+    text-align: right;
+}
+
+
+
+footer:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 60px;
+    opacity: 0.8;
+    background-image: url(../img/bg_top.jpg);
+    background-position: center top;
+}

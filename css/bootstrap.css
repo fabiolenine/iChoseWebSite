@@ -1,0 +1,166 @@
+
+.img-responsive,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.img-circle {
+  border-radius: 50%;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+
+.collapse {
+  display: none;
+}
+.collapse.in {
+  display: block;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+}
+
+.carousel {
+  position: relative;
+}
+.carousel-inner {
+  position: relative;
+  overflow: hidden;
+  width: 840px;
+  height: 280px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+.carousel-inner > .item {
+  display: none;
+  position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  line-height: 1;
+}
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  display: block;
+}
+.carousel-inner > .active {
+  left: 0;
+}
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.carousel-inner > .next {
+  left: 100%;
+}
+.carousel-inner > .prev {
+  left: -100%;
+}
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+  left: 0;
+}
+.carousel-inner > .active.left {
+  left: -100%;
+}
+.carousel-inner > .active.right {
+  left: 100%;
+}
+
+.panel-heading {
+  height: 32px;
+}
+
+.panel-body {
+    width: 899px;
+    margin-left: 1px;
+    text-align: left;
+    padding: 10px 10px 10px 39px;
+    background-color: #655f77;
+}
+
+
+
+
+.brands div .brands-nav .carousel-indicators {
+    margin-top: 20px;
+    height: 10px;
+    display: table;
+}
+
+.brands div .brands-nav .carousel-indicators .active {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background-color: #cccccc;
+    border: solid 4px #111111;
+    cursor: pointer;
+}
+
+.brands div .brands-nav .carousel-indicators li {
+    display: inline-block;
+    margin: 6px;
+
+}
+
+.brands div .brands-nav .carousel-indicators li {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background-color: #666666;
+    border: solid 4px #111111;
+    cursor: pointer;
+}
+
