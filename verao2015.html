@@ -19,55 +19,56 @@
     <body>
 		<div class="header-unit">
 			<div id="video-container">
-				<video autoplay loop preload class="fillWidth" id="verao2015">
+				<video autoplay loop preload muted class="fillWidth" id="verao2015">
+					<source src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015HD.m4v">
 					<source src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015HD.webm" type="video/webm">
 					<source src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" type="video/mp4">
 				</video>
 			</div><!-- end video-container -->
 		</div><!-- end .header-unit -->
 
-			<div class="container-fluid">
-				<div class="row-fluid clearfix">
-					<div class="col-md-4 column">
-					</div>
-			        <div class="col-md-4 column" id="glass">
+		<div class="container-fluid">
+			<div class="row-fluid clearfix">
+				<div class="col-md-4 column">
+				</div>
+			    <div class="col-md-4 column" id="glass">
     				<br>
     				<p class="text-center">
 						<img src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/logo_desc.png" class="img-rounded" />
 					</p>
 					<br>
-    				</div>
-					<div class="col-md-4 column">
-					</div>
-				</div>
-				 	
-				<div class="row-fluid clearfix">
-					<div class="col-md-4 column">
-					</div>
-			        <div class="col-md-4 column" id="glass">
-			 			<br>  
-			            <h3>Nunca foi tão fácil se divertir.</h3>
-			            <h4>Quer ser exclusivo e descobrir como?</h4>
-			            <form action="" method="post">
-			                <div class="input-group">
-			                     <input type="email" class="form-control" placeholder="digite o seu email aqui" required="" autofocus>
-      							<span class="input-group-btn">
-        							<button class="btn btn-large btn-primary" type="button">Enviar!</button>
-      							</span>
-			                </div>
-			                <br />
-			            </form> 
-			        </div>
-					<div class="col-md-4 column">
-					</div>
+    			</div>
+				<div class="col-md-4 column">
 				</div>
 			</div>
+				 	
+			<div class="row-fluid clearfix">
+				<div class="col-md-4 column">
+				</div>
+			    <div class="col-md-4 column" id="glass">
+			 		<br>  
+			        <h3>Nunca foi tão fácil se divertir.</h3>
+			        <h4>Quer ser exclusivo e descobrir como?</h4>
+		            <form action="" method="post">
+		                <div class="input-group">
+		                     <input type="email" class="form-control" placeholder="digite o seu email aqui" required="" autofocus>
+      						<span class="input-group-btn">
+        						<button class="btn btn-large btn-primary" type="button">Enviar!</button>
+      						</span>
+		                </div>
+		                <br />
+		            </form> 
+		        </div>
+				<div class="col-md-4 column">
+			</div>
+				</div>
+		</div>
 
 	</body>
 	<script>
 		myVid=document.getElementById("verao2015");
-  		myVid.volume=0.0;
   		myVid.webkitEnterFullscreen();
+  		myVid.load();
   		myVid.play();
 	</script> 
 	<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
