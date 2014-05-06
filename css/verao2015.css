@@ -4,10 +4,11 @@ body {
     padding-right: 20px;
     background-color: #eee;
     color: white;
+    position: absolute;
+    overflow: hidden;
   }
 
-#verao2015 { 
-	position: absolute; 
+video {
 	bottom: 0px; 
 	right: 0px; 
 	min-width: 100%; 
