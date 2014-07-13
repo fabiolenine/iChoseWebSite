@@ -3,20 +3,20 @@ jQuery( document ).ready(function( $ ) {
 	var cmpCdUser = jQuery("#user\\.cdUser");
 	var btSubmit = jQuery("#btSubmit");
 
-	cmpCdUser.bind("change", function(event){
+    cmpCdUser.bind("keyup", function(event){
 		
-		var cdUser = cmpCdUser.val();
+        var cdUser = cmpCdUser.val();
 
-		if (isEmail(cdUser)) {
-			event.preventDefault();
-			$('#sucessAlert').slideUp();
-
+		if  (isEmail(cdUser)) {
+			// alert("Maior que 3 "+deSenha.length);
+			btSubmit.removeAttr("disabled");
 		} else {
-			event.preventDefault();
-			$('#sucessAlert').slideDown();
-		}
-	});	
+			// alert("Menor que 3 "+deSenha.length);
+			btSubmit.attr("disabled", "disabled");
 
+		}
+	});
+    
 });
 
 function isEmail(email){
