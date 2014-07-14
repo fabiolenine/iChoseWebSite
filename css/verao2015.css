@@ -38,7 +38,7 @@ video {
     background-repeat:repeat;
   }
 
-.alert {
+.alert-dismissable {
     margin-top: 20px;
     display: none;
   }
