@@ -6,22 +6,13 @@ jQuery( document ).ready(function( $ ) {
     cmpCdUser.bind("keyup", function(event){
 		
         var cdUser = cmpCdUser.val();
-
-        if (cdUser==null) {            
-            event.preventDefault();
-			$('#sucessAlert').slideUp();
-        }
         
 		if  (isEmail(cdUser)) {
 			// ao digitar se validado ativa o botão;
 			btSubmit.removeAttr("disabled");
-            event.preventDefault();
-			$('#sucessAlert').slideUp();
 		} else {
 			// ao digitar se não validado desativa o botão;
 			btSubmit.attr("disabled", "disabled");
-            event.preventDefault();
-			$('#sucessAlert').slideDown();
 		}
 	});
     
