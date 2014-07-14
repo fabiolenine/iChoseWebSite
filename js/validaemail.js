@@ -7,7 +7,12 @@ jQuery( document ).ready(function( $ ) {
 		
         var cdUser = cmpCdUser.val();
 
-		if  ((isEmail(cdUser)) || (isEmpty(cdUser))) {
+        if (cdUser==null) {            
+            event.preventDefault();
+			$('#sucessAlert').slideUp();
+        }
+        
+		if  (isEmail(cdUser)) {
 			// ao digitar se validado ativa o botão;
 			btSubmit.removeAttr("disabled");
             event.preventDefault();
