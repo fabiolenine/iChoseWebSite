@@ -7,13 +7,16 @@ jQuery( document ).ready(function( $ ) {
 		
         var cdUser = cmpCdUser.val();
 
-		if  (isEmail(cdUser)) {
-			// alert("Maior que 3 "+deSenha.length);
+		if  ((isEmail(cdUser)) || (isEmpty(cdUser))) {
+			// ao digitar se validado ativa o botão;
 			btSubmit.removeAttr("disabled");
+            event.preventDefault();
+			$('#sucessAlert').slideUp();
 		} else {
-			// alert("Menor que 3 "+deSenha.length);
+			// ao digitar se não validado desativa o botão;
 			btSubmit.attr("disabled", "disabled");
-
+            event.preventDefault();
+			$('#sucessAlert').slideDown();
 		}
 	});
     
