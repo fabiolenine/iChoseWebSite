@@ -5,7 +5,6 @@ body {
     background-color: #eee;
     color: white;
     position: absolute;
-    overflow: hidden;
   }
 
 video {
