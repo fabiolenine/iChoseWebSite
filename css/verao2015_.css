@@ -1,0 +1,27 @@
+body {
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #eee;
+    color: white;
+    position: absolute;
+  }
+
+video {
+	bottom: 0px; 
+	right: 0px; 
+	min-width: 100%; 
+	min-height: 100%; 
+    max-height: 100%;
+	width: auto; 
+	height: auto; 
+	z-index: -1000;  
+    overflow: hidden;
+ }
+
+#glass {
+    background-color:#fff;
+    margin:0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+  }
