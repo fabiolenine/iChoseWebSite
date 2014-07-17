@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/css/mverao2015.css"> 
         <title>iChose - verão 2014/2015</title>
     </head>
-    <body onload="addMyListeners()">
+    <body onload="init()">
     <!--	<div id="fullscreen_bg" class="fullscreen_bg"></div> -->
 		<div class="container-fluid">
 			<div class="row-fluid clearfix">
@@ -45,7 +45,6 @@
 				</div>
 			</div>
 				<div class="row-fluid clearfix">
-					<p class="text-center">
 						<!--
                         <video loop 
                                preload 
@@ -57,11 +56,9 @@
 							<source src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" type="video/mp4">
 						</video>
                         -->
-                        <video controls 
+                        <video autoplay
                                src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" 
                                poster="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/bg_top.jpg"></video>
-                         <p id="loadStatus">MOVIE LOADING...</p>
-					</p>
 				</div>
 		</div>
 	</body>
@@ -71,21 +68,22 @@
     <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/validaemail.js"></script>
     
     <script type="text/javascript">
-        function getPercentProg() {
-            var myVideo = document.getElementsByTagName('video')[0];
-            var endBuf = myVideo.buffered.end(0);
-            var soFar = parseInt(((endBuf / myVideo.duration) * 100));
-            document.getElementById("loadStatus").innerHTML =  soFar + '%';
+        var vid;
+        function init() {
+            vid = document.getElementById("myVideo");
+            vid.addEventListener("loadedmetadata", addFullscreenButton, false);
         }
-       function myAutoPlay() {
-           var myVideo = document.getElementsByTagName('video')[0];
-           myVideo.play();
-       }
-       function addMyListeners(){
-           var myVideo = document.getElementsByTagName('video')[0];
-           myVideo.addEventListener('progress', getPercentProg, false);
-           myVideo.addEventListener('canplaythrough', myAutoPlay, false);
-       }
+        function addFullscreenButton() {
+            if (vid.webkitSupportsFullscreen) {
+                var fs = document.getElementById("fs");
+                fs.style.visibility = "visible";
+            }
+        }
+        function goFullscreen() {
+            vid.webkitEnterFullscreen();
+        }
+    </script>
+        
     </script>
     
 </html>
