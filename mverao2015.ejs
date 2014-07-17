@@ -5,11 +5,11 @@
     	<!-- Meta, title, CSS, favicons, etc. -->
     	<!--<meta charset="iso-8859-1"/> -->
     	<meta charset="utf-8"/>
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<!--    	
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>    	
+        <!--
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
--->
-    	<meta name="keywords" content="ichose, provider, baladas, eventos, festas, shows, comanda, digital, danceteria, software, balcão"/>
+    	-->
+        <meta name="keywords" content="ichose, provider, baladas, eventos, festas, shows, comanda, digital, danceteria, software, balcão"/>
     	<meta name="author" content="Fabio Lenine, Jadson Mezzari, Jesualdo Pinheiro and Lucas Assis."/>
 <!--
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -18,25 +18,32 @@
 -->
     <title>iChose - verão 2014/2015</title>
 
+   <style>
+        #video-player:-webkit-full-screen {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        #video-player:-webkit-full-screen video {
+            width: 100%;
+        }
+    </style>
     <script type="text/javascript">
-        var vid;
-        function init() {
-            vid = document.getElementById("myVideo");
-            vid.addEventListener("loadedmetadata", addFullscreenButton, false);
-        }
-        function addFullscreenButton() {
-            if (vid.webkitSupportsFullscreen) {
-                var fs = document.getElementById("fs");
-                fs.style.visibility = "visible";
-            }
-        }
+        function playPause() {
+            var myVideo = document.querySelector('video');
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+         }
         function goFullscreen() {
-            vid.webkitEnterFullscreen();
+            var myPlayer = document.getElementById('video-player');
+            myPlayer.webkitRequestFullscreen();
         }
     </script>
         
     </head>
-    <body onload="init()">
+    <body>
     <!--	<div id="fullscreen_bg" class="fullscreen_bg"></div>
 		<div class="container-fluid">
 			<div class="row-fluid clearfix">
@@ -75,13 +82,16 @@
 							<source src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" type="video/mp4">
 						</video>
                         -->
-                        <video autoplay
+                        <div id="video-player">
+                        <video autoplay 
                                src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" 
                                poster="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/bg_top.jpg"></video>
+                               <p><a href="javascript:playPause();">Play/Pause</a></p>
+                        </div>
+        <a href="javascript:goFullscreen();">Full-screen</a>
 <!--				</div>
 		</div>
 -->
-         <input type="button" id="fs" value="Fullscreen" onclick="goFullscreen()" style="visibility:hidden">
 	</body>
 	<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.2/angular.min.js"></script>
