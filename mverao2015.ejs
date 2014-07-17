@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/css/mverao2015.css"> 
         <title>iChose - verão 2014/2015</title>
     </head>
-    <body>
+    <body onload="addMyListeners()">
     <!--	<div id="fullscreen_bg" class="fullscreen_bg"></div> -->
 		<div class="container-fluid">
 			<div class="row-fluid clearfix">
@@ -57,11 +57,10 @@
 							<source src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" type="video/mp4">
 						</video>
                         -->
-                        <video src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" 
+                        <video controls 
+                               src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/verao2015SD.mp4" 
                                poster="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/bg_top.jpg"></video>
-                        <a href="javascript:playPause();">Play/Pause</a> |
-                        <a href="javascript:makeBig();">2x Size</a> |
-                        <a href="javascript:makeNormal();">1x Size</a>
+                         <p id="loadStatus">MOVIE LOADING...</p>
 					</p>
 				</div>
 		</div>
@@ -72,20 +71,20 @@
     <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/validaemail.js"></script>
     
     <script type="text/javascript">
-        function playPause() {
+        function getPercentProg() {
             var myVideo = document.getElementsByTagName('video')[0];
-            if (myVideo.paused)
-                myVideo.play();
-            else
-                myVideo.pause();
+            var endBuf = myVideo.buffered.end(0);
+            var soFar = parseInt(((endBuf / myVideo.duration) * 100));
+            document.getElementById("loadStatus").innerHTML =  soFar + '%';
         }
-       function makeBig() {
+       function myAutoPlay() {
            var myVideo = document.getElementsByTagName('video')[0];
-           myVideo.height = myVideo.videoHeight * 2;
+           myVideo.play();
        }
-       function makeNormal() {
+       function addMyListeners(){
            var myVideo = document.getElementsByTagName('video')[0];
-           myVideo.height = myVideo.videoHeight;
+           myVideo.addEventListener('progress', getPercentProg, false);
+           myVideo.addEventListener('canplaythrough', myAutoPlay, false);
        }
     </script>
     
