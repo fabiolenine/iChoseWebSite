@@ -5,11 +5,9 @@ body {
     background-color: #eee;
     color: white;
     position: absolute;
-    overflow: hidden;
   }
 
-video #verao2014 {
-    position: absolute; 
+#verao2015 {
     right: 0; 
     bottom: 0;
     min-width: 100%; 
@@ -17,7 +15,8 @@ video #verao2014 {
     width: auto; 
     height: auto; 
     z-index: -100;
-    overflow: hidden;
+    position: fixed;
+    background-size: cover;
 }
 
 #glass {
