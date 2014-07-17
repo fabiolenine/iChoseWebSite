@@ -16,8 +16,6 @@ body {
     height: auto; 
     z-index: -100;
     position: fixed;
-    background: url(https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/bg_top.jpg) no-repeat;
-    background-size: cover;
 }
 
 #glass {
