@@ -37,8 +37,3 @@ video {
     background-image: url(https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/bg_top.jpg);
     background-repeat:repeat;
   }
-
-.alert-dismissable {
-    margin-top: 20px;
-    display: none;
-  }
