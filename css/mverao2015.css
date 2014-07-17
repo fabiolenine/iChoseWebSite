@@ -25,15 +25,3 @@ body {
     background-image: url(https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/bg_top.jpg);
     background-repeat:repeat;
   }
-
-video #mverao2015 {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    background-size: cover;
-  }
