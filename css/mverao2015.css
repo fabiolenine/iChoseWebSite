@@ -14,7 +14,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
   }
 
-#mverao2015 {
+video #mverao2015 {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -23,6 +23,10 @@ body {
     width: auto;
     height: auto;
     z-index: -100;
-    background: url() repeat;
+    background: url(https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/img/bg_top.jpg) repeat;
     background-size: cover;
   }
+
+video {
+    display:block;
+}
