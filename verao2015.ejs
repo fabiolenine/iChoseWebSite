@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-ng-app="verao2015App">
+<html lang="pt-br" data-ng-app>
     <head>
     	<!-- Meta, title, CSS, favicons, etc. -->
     	<!--<meta charset="iso-8859-1"/> -->
@@ -52,7 +52,7 @@
 			        <h4>Quer ser exclusivo e descobrir como?</h4>
 		            <form action="" method="post">
 		                <div class="input-group">
-		                    <input type="email" id="user.cdUser" class="form-control" placeholder="digite o seu email aqui" required="" autofocus ng-model="envio.email">
+		                    <input type="email" id="user.cdUser" class="form-control" placeholder="digite o seu email aqui" required="" autofocus ng-model="envio.email" ng-click="enviar()">
       						<span class="input-group-btn">
         						<button id="btSubmit" class="btn btn-large btn-primary" type="button" disabled="disabled" ng-click="enviar()">Enviar</button>
       						</span>
