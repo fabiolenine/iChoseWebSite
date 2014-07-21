@@ -8,7 +8,7 @@ verao2015App.controller('envioemailCtrl', function($scope,$http){
         $http.post('/emailverao2015',$scope.envio).success(function(){
             init();
         });
-    };
+    }
     
     var init = function(){
         $scope.envio = {email:''};
