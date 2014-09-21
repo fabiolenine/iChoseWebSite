@@ -52,14 +52,27 @@
 			        <h4>Quer ser exclusivo e descobrir como?</h4>
 		            <form action="" method="post">
 		                <div class="input-group">
-		                    <input type="email" id="user.cdUser" class="form-control" placeholder="digite o seu email aqui" required="" autofocus ng-model="envio.email">
+		                    <input type         = "email" 
+                                   id           = "user.cdUser" 
+                                   class        = "form-control" 
+                                   placeholder  = "digite o seu email aqui" 
+                                   required     = "" 
+                                   autofocus 
+                                   ng-model     = "envio.email">
       						<span class="input-group-btn">
-        						<button id="btSubmit" class="btn btn-large btn-primary" type="button" disabled="disabled" ng-click="enviar()">Enviar</button>
+        						<button id        = "btSubmit" 
+                                        class     = "btn btn-large btn-primary" 
+                                        type      = "button" 
+                                        disabled  = "disabled" 
+                                        ng-click  = "enviar()">
+                                        Enviar
+                                </button>
       						</span>
 		                </div>
-                        <div class  = "alert alert-success"
-                             role   = "alert">
-                             <h3>Obrigado, foi enviado um e-mail para confirmação.</h3> 
+                        <div class      = "alert alert-success"
+                             role       = "alert"
+                             ng-show    = "sucesso">
+                             <h4>Obrigado, foi enviado um e-mail para confirmação.</h4> 
                         </div>
                         <br/>
 		            </form> 
