@@ -72,11 +72,25 @@
                         <div class      = "alert alert-success alert-dismissible"
                              role       = "alert"
                              ng-show    = "show.sucesso">
-                             <h4>Obrigado, foi enviado um e-mail para confirmação.</h4> 
+                             <button 
+                                     type           = "button" 
+                                     class          = "close" 
+                                     data-dismiss   = "alert">
+                                 <span aria-hidden  = "true">&times;</span>
+                                 <span class="sr-only">Close</span>
+                              </button>
+                              <h4>Obrigado, foi enviado um e-mail para confirmação.</h4> 
                         </div>
                         <div class      = "alert alert-warning alert-dismissible"
                              role       = "alert"
                              ng-hide    = "show.alerta">
+                             <button 
+                                     type           = "button" 
+                                     class          = "close" 
+                                     data-dismiss   = "alert">
+                                 <span aria-hidden  = "true">&times;</span>
+                                 <span class="sr-only">Close</span>
+                             </button>
                              <h4>Opss, algo está errado, digite novamente outro e-mail.</h4> 
                         </div>
                         <br/>
