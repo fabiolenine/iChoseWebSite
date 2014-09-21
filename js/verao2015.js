@@ -3,8 +3,9 @@ function envioemailCtrl($scope,$http,$window){
     var $ = jQuery;
     
     $scope.enviar = function(){
-        $http.post('/emailverao2015',$scope.envio).success(function(){
-            init();
+        $http.post('/emailverao2015',$scope.envio).success(function()
+        {
+            
         });
     }
     
