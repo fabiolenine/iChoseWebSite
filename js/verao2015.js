@@ -2,13 +2,6 @@ function envioemailCtrl($scope,$http,$window){
     
     $scope.enviar = function(){
         show();
-        
-        // Verifica se o browser do usuario tem suporte a Geolocation
-        if ( navigator.geolocation ){
-            navigator.geolocation.getCurrentPosition( function( posicao ){
-                console.log( posicao.coords.latitude, posicao.coords.longitude );
-            });
-        }
 
         $http.post('/emailverao2015',$scope.envio).success(function(retorno)
         {
@@ -21,10 +14,23 @@ function envioemailCtrl($scope,$http,$window){
                                        alerta   : false};
                  }
         });
-                             };
+    };
     
     var init = function(){
-        $scope.envio = {email:''};
+        
+        // Verifica se o browser do usuario tem suporte a Geolocation
+        if ( navigator.geolocation ){
+            navigator.geolocation.getCurrentPosition( function( posicao ){
+                //$scope.envio.location.lat   := posicao.coords.latitude;
+                //$scope.envio.location.lng   := posicao.coords.longitude;
+                //console.log( $scope.envio );
+                console.log(posicao.coords.latitude);
+                console.log(posicao.coords.longitude);
+            });
+        }
+        
+        $scope.envio = {email:'',
+                       location: {lat: posicao.coords.latitude, lng: posicao.coords.longitude}};
         show();
     };
     
