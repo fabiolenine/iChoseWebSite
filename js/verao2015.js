@@ -1,5 +1,44 @@
 function envioemailCtrl($scope,$http,$window){
     
+    var latitude, longitude;        
+    var geoOptions = { enableHighAccuracy: true,
+	                       timeout: 30000,
+	                       maximumAge: 3000
+                         };
+    
+    function geoError( err ) {
+	   switch( err.code ) {
+           case 1:
+			 // permissao negada pelo usuario
+		    latitude    = 0.0;
+            longitude   = 0.0;
+            break;
+
+		  case 2:
+            // nao foi possivel alcancar os satelites GPS
+            latitude    = 0.0;
+            longitude   = 0.0;
+            break;
+
+		  case 3:
+			// a requisicao demorou demais para retornar
+            latitude    = 0.0;
+            longitude   = 0.0;
+            break;
+
+		  case 0:
+			// ocorreu um erro desconhecido...
+            latitude    = 0.0;
+            longitude   = 0.0;
+			break;
+	       }	
+    };
+    
+    function geoSuccess(pos){
+                latitude  = pos.coords.latitude;
+                longitude = pos.coords.longitude;
+            };
+
     $scope.enviar = function(){
         show();
 
@@ -15,22 +54,13 @@ function envioemailCtrl($scope,$http,$window){
                  }
         });
     };
-    
+        
     var init = function(){
         
-        // Verifica se o browser do usuario tem suporte a Geolocation
-        if ( navigator.geolocation ){
-            navigator.geolocation.getCurrentPosition( function( posicao ){
-                //$scope.envio.location.lat   := posicao.coords.latitude;
-                //$scope.envio.location.lng   := posicao.coords.longitude;
-                //console.log( $scope.envio );
-                console.log(posicao.coords.latitude);
-                console.log(posicao.coords.longitude);
-            });
-        }
-        
+        navigator.geolocation.getCurrentPosition(geoSuccess,geoError,geoOptions);
+
         $scope.envio = {email:'',
-                       location: {lat: posicao.coords.latitude, lng: posicao.coords.longitude}};
+                       location: {lat: latitude, lng: longitude}};
         show();
     };
     
