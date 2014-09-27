@@ -2,6 +2,14 @@ function envioemailCtrl($scope,$http,$window){
     
     $scope.enviar = function(){
         show();
+        
+        // Verifica se o browser do usuario tem suporte a Geolocation
+        if ( navigator.geolocation ){
+            navigator.geolocation.getCurrentPosition( function( posicao ){
+                console.log( posicao.coords.latitude, posicao.coords.longitude );
+            });
+        }
+
         $http.post('/emailverao2015',$scope.envio).success(function(retorno)
         {
             if(retorno){   
