@@ -1,6 +1,8 @@
 function envioemailCtrl($scope,$http,$window){
     
-    var latitude, longitude;        
+    var latitude  = -35.717680;
+    var longitude = -9.644430;
+    
     var geoOptions = { enableHighAccuracy: true,
 	                       timeout: 30000,
 	                       maximumAge: 3000
@@ -10,26 +12,18 @@ function envioemailCtrl($scope,$http,$window){
 	   switch( err.code ) {
            case 1:
 			 // permissao negada pelo usuario
-		    latitude    = 0.0;
-            longitude   = 0.0;
             break;
 
 		  case 2:
             // nao foi possivel alcancar os satelites GPS
-            latitude    = 0.0;
-            longitude   = 0.0;
             break;
 
 		  case 3:
 			// a requisicao demorou demais para retornar
-            latitude    = 0.0;
-            longitude   = 0.0;
             break;
 
 		  case 0:
 			// ocorreu um erro desconhecido...
-            latitude    = 0.0;
-            longitude   = 0.0;
 			break;
 	       }	
     };
