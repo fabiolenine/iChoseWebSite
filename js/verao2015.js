@@ -35,7 +35,11 @@ function envioemailCtrl($scope,$http,$window){
 
     $scope.enviar = function(){
         show();
-
+        
+        $scope.envio.location = {lat: latitude, lng: longitude};
+        
+        navigator.geolocation.getCurrentPosition(geoSuccess,geoError,geoOptions);
+        
         $http.post('/emailverao2015',$scope.envio).success(function(retorno)
         {
             if(retorno){   
