@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js"
+      ng-app="iChosehotsite"
       lang="pt-br">
 
 <head>
@@ -22,7 +23,8 @@
     <title>iChose - Comanda Digital</title>
 </head>
 
-<body id="home">
+<body id="home" 
+      ng-controller="hotsiteCTRL">
     <nav>
         <ul>
             <li>
@@ -158,11 +160,22 @@
     <section id="contact">
         <ul class="contact">
             <li class="form-area">
-                <form action="#" method="get" accept-charset="utf-8">
-                    <textarea name="" placeholder="Mensagem"></textarea>
-                    <input type="text" name="" value="" placeholder="Nome">
-                    <input type="text" name="" value="" placeholder="E-mail">
-                    <input type="submit" name="" value="Olá">
+                <form>
+                    <textarea placeholder ="Mensagem"
+                              class       ="form-control" 
+                              ng-model    ="sacData.mensagem"
+                              autofocus></textarea>
+                    <input type         ="text" 
+                           placeholder  ="Nome"
+                           class        ="form-control"
+                           ng-model     ="sacData.nome">
+                    <input type         ="text" 
+                           placeholder  ="E-mail"
+                           class        ="form-control"
+                           ng-model     ="sacData.email">
+                    <input type         ="submit" 
+                           value        ="Olá"
+                           ng-click     ="enviar()">
                 </form>
             </li>
             <li class="logo-area">
@@ -195,11 +208,20 @@
         </ul>
     </footer>
 
-    <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/main.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src='https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/lib/smooth-scroll.js'></script>
-    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/vendor/modernizr-2.7.1.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.js"
+                type="text/javascript">                                                                             </script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
+                type="text/javascript">                                                                             </script>
+    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/lib/smooth-scroll.js"
+                type="text/javascript">                                                                             </script>
+    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/vendor/modernizr-2.7.1.js"
+                type="text/javascript">                                                                             </script>
+    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/hotsiteController.js"
+                type="text/javascript">                                                                             </script>
+    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/hotsiteCore.js"
+                type="text/javascript">                                                                             </script>
+    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/hotsiteService.js"
+                type="text/javascript">                                                                             </script>
     <script>
     smoothScroll.init({
         speed: 500,
