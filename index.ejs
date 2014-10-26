@@ -204,7 +204,8 @@
                            placeholder  ="Nome"
                            class        ="form-control"
                            ng-model     ="sacData.nome">
-                    <input type         ="text" 
+                    <input type         ="email"
+                           id           ="user.cdUser"
                            placeholder  ="E-mail"
                            class        ="form-control"
                            ng-model     ="sacData.email">
@@ -212,8 +213,8 @@
                            value        ="Olá"
                            ng-click     ="enviar()">
                     <div class      = "alert alert-success alert-dismissible"
-                             role       = "alert"
-                             ng-show    = "show.sucesso">
+                         role       = "alert"
+                         ng-show    = "show.sucesso">
                              <button 
                                      type           = "button" 
                                      class          = "close" 
@@ -282,6 +283,8 @@
     <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/hotsiteCore.js"
                 type="text/javascript">                                                                             </script>
     <script src="https://s3-us-west-2.amazonaws.com/ichose/site/hotsite/js/hotsiteService.js"
+                type="text/javascript">                                                                             </script>
+    <script src="https://s3-us-west-2.amazonaws.com/ichose/site/provider/js/validaemail.js"
                 type="text/javascript">                                                                             </script>
     <script>
     smoothScroll.init({

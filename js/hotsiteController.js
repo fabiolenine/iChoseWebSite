@@ -44,12 +44,13 @@ angular.module('hotsiteController',[])
                                 mensagem    : ''};
         
 //            navigator.geolocation.getCurrentPosition($scope.geoSuccess,$scope.geoError,$scope.geoOptions);
-
-            $scope.show  = {sucesso : false,
-                            alerta  : true};  
+ 
         };
 
         $scope.reset();
+    
+        $scope.show  = {sucesso : false,
+                        alerta  : true}; 
     
         // List ===================================================================================
         // When landing on the page, get all events and show them
@@ -62,7 +63,7 @@ angular.module('hotsiteController',[])
         // Insert =================================================================================
         // When submitting the add form, send the text to the node API
         $scope.enviar = function() {
-//            $scope.sacData.location = {lat: $scope.latitude, lng: $scope.longitude};
+            $scope.sacData.location = {lat: $scope.latitude, lng: $scope.longitude};
         
 //            navigator.geolocation.getCurrentPosition($scope.geoSuccess,$scope.geoError,$scope.geoOptions);
             // validate the formData to make sure that something is there
@@ -78,14 +79,14 @@ angular.module('hotsiteController',[])
                 // if successful creation, call our get function to get all the new events
                 
                 .success(function(data) {
-//                    if(data){   
-//                        $scope.show = {sucesso  : true,
-//                                       alerta   : true};
-//                    }
-//                    else {
-//                        $scope.show = {sucesso  : false,
-//                                       alerta   : false};
-//                    }
+                    if(data){   
+                        $scope.show = {sucesso  : true,
+                                       alerta   : true};
+                    }
+                    else {
+                        $scope.show = {sucesso  : false,
+                                       alerta   : false};
+                    }
                     $scope.reset(); // clear the form so our user is ready to enter another
                 });
             }
