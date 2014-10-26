@@ -4,55 +4,51 @@ angular.module('hotsiteController',[])
     //inject the Event service factory into our controller
     .controller('hotsiteCTRL', function($scope, $http, HotSites) {
         
-        var latitude  = -35.717680;
-        var longitude = -9.644430;
+//        $scope.latitude   = -35.717680;
+//        $scope.longitude  = -9.644430;
         
-        var geoOptions = {  enableHighAccuracy: true,
-                            timeout: 30000,
-                            maximumAge: 3000};
+//        $scope.geoOptions = {   enableHighAccuracy: true,
+//                                timeout: 30000,
+//                                maximumAge: 3000};
     
-        $scope.geoError = function(err) {
-           switch( err.code ) {
-               case 1:
-                 // permissao negada pelo usuario
-                break;
-
-              case 2:
-                // nao foi possivel alcancar os satelites GPS
-                break;
-
-              case 3:
-                // a requisicao demorou demais para retornar
-                break;
-
-              case 0:
-                // ocorreu um erro desconhecido...
-                break;
-               }	
-            };
+//        $scope.geoError = function(err) {
+//           switch( err.code ) {
+//               case 1:
+//                 // permissao negada pelo usuario
+//                break;
+//
+//              case 2:
+//                // nao foi possivel alcancar os satelites GPS
+//                break;
+//
+//              case 3:
+//                // a requisicao demorou demais para retornar
+//                break;
+//
+//              case 0:
+//                // ocorreu um erro desconhecido...
+//                break;
+//               }	
+//            };
     
-        $scope.geoSuccess = function(pos){
-                latitude  = pos.coords.latitude;
-                longitude = pos.coords.longitude;
-            };
+//        $scope.geoSuccess = function(pos){
+//                $scope.latitude  = pos.coords.latitude;
+//                $scope.longitude = pos.coords.longitude;
+//            };
     
         $scope.reset = function() {
             $scope.listBalad = {};
             $scope.sacData   = {email       : '',
-                                location    : {lat: latitude, lng: longitude},
+                                location    : {lat: $scope.latitude, lng: $scope.longitude},
                                 nome        : '',
                                 mensagem    : ''};
         
-            navigator.geolocation.getCurrentPosition(geoSuccess,geoError,geoOptions);
+//            navigator.geolocation.getCurrentPosition($scope.geoSuccess,$scope.geoError,$scope.geoOptions);
 
-            show();
-        };
-    
-        var show = function(){
             $scope.show  = {sucesso : false,
-                            alerta  : true};    
+                            alerta  : true};  
         };
-            
+
         $scope.reset();
     
         // List ===================================================================================
@@ -60,15 +56,16 @@ angular.module('hotsiteController',[])
         // use the service to get all the events
         HotSites.list()
             .success(function(data) {
+                console.log(data);
                 $scope.listBalad = data;
             });
             
         // Insert =================================================================================
         // When submitting the add form, send the text to the node API
         $scope.enviar = function() {
-            $scope.sacData.location = {lat: latitude, lng: longitude};
+//            $scope.sacData.location = {lat: $scope.latitude, lng: $scope.longitude};
         
-            navigator.geolocation.getCurrentPosition(geoSuccess,geoError,geoOptions);
+//            navigator.geolocation.getCurrentPosition($scope.geoSuccess,$scope.geoError,$scope.geoOptions);
             // validate the formData to make sure that something is there
             // if form is empty, nothing will happen
             // people can't just hold enter to keep adding the same event anymore
@@ -82,14 +79,14 @@ angular.module('hotsiteController',[])
                 // if successful creation, call our get function to get all the new events
                 
                 .success(function(data) {
-                    if(data){   
-                        $scope.show = {sucesso  : true,
-                                       alerta   : true};
-                    }
-                    else {
-                        $scope.show = {sucesso  : false,
-                                       alerta   : false};
-                    }
+//                    if(data){   
+//                        $scope.show = {sucesso  : true,
+//                                       alerta   : true};
+//                    }
+//                    else {
+//                        $scope.show = {sucesso  : false,
+//                                       alerta   : false};
+//                    }
                     $scope.reset(); // clear the form so our user is ready to enter another
                 });
             }
