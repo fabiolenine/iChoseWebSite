@@ -11,7 +11,7 @@ angular.module('hotsiteController',[])
                             timeout: 30000,
                             maximumAge: 3000};
     
-        function geoError( err ) {
+        $scope.geoError = function(err) {
            switch( err.code ) {
                case 1:
                  // permissao negada pelo usuario
@@ -31,7 +31,7 @@ angular.module('hotsiteController',[])
                }	
             };
     
-        function geoSuccess(pos){
+        $scope.geoSuccess = function(pos){
                 latitude  = pos.coords.latitude;
                 longitude = pos.coords.longitude;
             };
