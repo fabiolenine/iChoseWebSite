@@ -4,8 +4,8 @@ angular.module('hotsiteController',[])
     //inject the Event service factory into our controller
     .controller('hotsiteCTRL', function($scope, $http, HotSites) {
         
-//        $scope.latitude   = -35.717680;
-//        $scope.longitude  = -9.644430;
+        $scope.latitude   = -35.717680;
+        $scope.longitude  = -9.644430;
         
 //        $scope.geoOptions = {   enableHighAccuracy: true,
 //                                timeout: 30000,
