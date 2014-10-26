@@ -56,7 +56,6 @@ angular.module('hotsiteController',[])
         // use the service to get all the events
         HotSites.list()
             .success(function(data) {
-                console.log(data);
                 $scope.listBalad = data;
             });
             
